@@ -1,15 +1,10 @@
-.post-comments-form-textarea {
-    color: #333;
-    font-size: 14px;
-    line-height: 22px;
-    margin-bottom: 24px;
-}
+import styled from "styled-components";
 
-.post-comments {
-    
-}
+export const CommentsPost = styled.ul`
 
-.post-comment {
+`
+
+export const CommentPost = styled.li`
     color: #444;
     font-size: 12px;
     line-height: 20px;
@@ -17,26 +12,30 @@
     padding: 8px 16px;
     border-radius: 8px;
     margin-bottom: 8px;
-}
+`
 
-.post-comment-content {
+export const PostContent = styled.p`
     font-style: italic;
-}
+`
 
-.post-comments-form {
+export const FormPost = styled.form`
     margin-top: 16px;
     text-align: right;
-}
+`
 
-.post-comments-form-textarea {
+export const TextareaPost = styled.textarea`
     display: block;
     resize: none;
     width: 100%;
     margin-bottom: 8px;
     padding: 8px 16px;
-}
+    color: #333;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 24px;
+`
 
-.post-comments-form-button {
+export const ButtonPost = styled.button`
     padding: 8px 16px;
     font-weight: bold;
     border-radius: 8px;
@@ -44,4 +43,4 @@
     background-color: #27ae60;
     color: #eee;
     cursor: pointer;
-}
+`

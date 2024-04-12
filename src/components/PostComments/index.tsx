@@ -2,6 +2,7 @@ import { FormEvent, useState } from 'react';
 import styles from './PostComments.module.css';
 
 import Comment from '../../models/Comment';
+import { ButtonPost, CommentPost, CommentsPost, FormPost, PostContent, TextareaPost } from './styled';
 
 const Post = () => {
     const [comments, setComments] = useState<Comment[]>([]);
@@ -16,21 +17,21 @@ const Post = () => {
 
     return (
         <div>
-            <ul className={styles['post-comments']}>
+            <CommentsPost>
                 {comments.map(({ comment, id }) => (
-                    <li className={styles['post-comment']} key={id}>
-                        <p className={styles['post-comment-content']}>
+                    <CommentPost key={id}>
+                        <PostContent>
                             {comment}
-                        </p>
-                    </li>
+                        </PostContent>
+                    </CommentPost>
                 ))}
-            </ul>
-            <form onSubmit={handleAddComment} className={styles['post-comments-form']}>
-                <textarea value={tempComment} onChange={e => setTempComment(e.target.value)} required className={styles['post-comments-form-textarea']} />
-                <button type="submit" className={styles['post-comments-form-button']}>
+            </CommentsPost>
+            <FormPost onSubmit={handleAddComment}>
+                <TextareaPost value={tempComment} onChange={e => setTempComment(e.target.value)} required />
+                <ButtonPost type="submit">
                     Comentar
-                </button>
-            </form>
+                </ButtonPost>
+            </FormPost>
         </div>
     );
 }
