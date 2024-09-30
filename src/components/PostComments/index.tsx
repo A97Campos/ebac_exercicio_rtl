@@ -19,7 +19,7 @@ const Post = () => {
         <div>
             <CommentsPost>
                 {comments.map(({ comment, id }) => (
-                    <CommentPost key={id}>
+                    <CommentPost data-testid='comentario' key={id}>
                         <PostContent>
                             {comment}
                         </PostContent>
@@ -27,8 +27,8 @@ const Post = () => {
                 ))}
             </CommentsPost>
             <FormPost onSubmit={handleAddComment}>
-                <TextareaPost value={tempComment} onChange={e => setTempComment(e.target.value)} required />
-                <ButtonPost type="submit">
+                <TextareaPost data-testid='comentarTexto' value={tempComment} onChange={e => setTempComment(e.target.value)} required />
+                <ButtonPost data-testid='comentarButton' type="submit">
                     Comentar
                 </ButtonPost>
             </FormPost>
